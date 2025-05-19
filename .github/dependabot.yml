@@ -1,0 +1,28 @@
+# Basic dependabot.yml file to set up GitHub Dependabot for your project
+
+version: 2
+updates:
+  # Update npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Specify labels for npm pull requests
+    labels:
+      - "npm"
+      - "dependencies"
+    groups:
+      prod-deps:
+        dependency-type: 'production'
+      dev-deps:
+        dependency-type: 'development'
+
+  # Update GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Specify labels for GitHub Actions pull requests
+    labels:
+      - "github-actions"
+      - "dependencies"
