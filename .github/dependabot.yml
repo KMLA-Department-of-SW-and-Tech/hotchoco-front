@@ -7,6 +7,9 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: 'tuesday'
+      time: '01:00'
+      timezone: 'Asia/Seoul'
     # Specify labels for npm pull requests
     labels:
       - "npm"
