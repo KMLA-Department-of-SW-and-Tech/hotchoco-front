@@ -1,11 +1,14 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
   const handleGoogleLogin = () => {
     console.log("Google 로그인 시도");
     // 여기에 Google 로그인 로직 연결 예정
   };
+
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -80,6 +83,17 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "#888",
   },
+  backButton: {
+    position: 'absolute',
+    top: 50,
+    left: 20,
+    padding: 10,
+    zIndex: 10,
+  },
+  backIcon: {
+    width: 24,
+    height: 24,
+  },  
 });
 
 export default Login;
