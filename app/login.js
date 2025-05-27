@@ -1,25 +1,28 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 
 const Login = () => {
-    return (
+  const handleGoogleLogin = () => {
+    console.log("Google 로그인 시도");
+    };
+
+  return (
         <View style={styles.container}>
             <Image
-                    source={require()}
-                    style={{}}
+                source={require("../assets/images/login.png")}
+                style={styles.logo}
             />
             <Text style={styles.title}>로그인</Text>
-
-            <TouchableOpacity style={styles.button} onPress={}>
+            <TouchableOpacity style={styles.button} onPress={handleGoogleLogin}>
                 <Image
-                    source={require()}
-                    style={{}}
+                    source={require("../assets/images/google-icon.png")}
+                    style={styles.googleIcon}
                 />
                 <Text style={styles.buttonText}>Continue with Google</Text>
             </TouchableOpacity>
         </View>
     );
-};
+}
 
 const styles = StyleSheet.create ({
     container:{
@@ -32,7 +35,7 @@ const styles = StyleSheet.create ({
     title:{
         width: 68,
         height: 34,
-        top: 297,
+        top: 97,
         left: 161,
         fontFamily: "Arimo",
         fontWeight: "700",
@@ -58,7 +61,7 @@ const styles = StyleSheet.create ({
         borderColor: "#000000",
         justifyContent: "center",
         alignItems: "center",
-    }
+    },
 
     buttonText: {
         width: 253,
@@ -73,4 +76,20 @@ const styles = StyleSheet.create ({
         textAlign: "center",
         color: "#000000",
     },
+
+    logo: {
+        width: 115,
+        height:113,
+        top: 191.52,
+        Left: 130
+    },
+
+    googleIcon: {
+        width: 18,
+        height: 18,
+        top: 370,
+        left: 75,
+    }
 });
+
+export default Login;
