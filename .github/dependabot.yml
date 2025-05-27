@@ -1,0 +1,52 @@
+# Basic dependabot.yml file to set up GitHub Dependabot for your project
+
+version: 2
+updates:
+  # Update npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+      time: "01:00"
+      timezone: "Asia/Seoul"
+    # Specify labels for npm pull requests
+    labels:
+      - "npm"
+      - "dependencies"
+    groups:
+      prod-deps:
+        dependency-type: "production"
+        exclude-patterns:
+          - "react*"
+          - "expo*"
+      dev-deps:
+        dependency-type: "development"
+        exclude-patterns:
+          - "react*"
+          - "@types/react*"
+          - "expo*"
+      react:
+        patterns:
+          - "react*"
+          - "@types/react*"
+        exclude-patterns:
+          - "react-native*"
+          - "@types/react-native*"
+      react-native:
+        patterns:
+          - "react-native*"
+          - "@types/react-native*"
+      expo:
+        patterns:
+          - "expo*"
+
+  # Update GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Specify labels for GitHub Actions pull requests
+    labels:
+      - "github-actions"
+      - "dependencies"

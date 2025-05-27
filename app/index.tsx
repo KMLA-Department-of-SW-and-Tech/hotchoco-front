@@ -12,6 +12,7 @@ const Main = ({}) => {
         <Text style={styles.buttonText}>login</Text>
       </TouchableOpacity>
     </View>
+
   );
 }
 
